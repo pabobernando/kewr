@@ -1,0 +1,17 @@
+syntax = "proto3";
+package kewr.kewr;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "kewr/kewr/params.proto";
+
+option go_package = "kewr/x/kewr/types";
+
+// GenesisState defines the kewr module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
